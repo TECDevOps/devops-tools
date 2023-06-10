@@ -83,7 +83,11 @@ helm version
 # Nginx-ingress
 ## Installation
 ```sh
-
+git clone https://github.com/srinisbook/kuberntes-nginx-controller.git
+cd kuberntes-nginx-controller
+kubectl apply -f nginx-ingress.yaml
+kubectl get pods -n ingress-nginx
+kubectl get services -n ingress-nginx
 ```
 ============================================================================================================
 # Rancher
@@ -109,6 +113,16 @@ kubectl get ingress -n cattle-system
 # grafana prometheus
 ## Installation
 ```sh
-
+git clone https://github.com/prometheus-operator/kube-prometheus.git
+cd kube-prometheus/manifests/setup
+kubectl apply -f .
+cd ..
+kubectl apply -f .
+kubectl get pods -n monitoring
+kubectl get service -n monitoring
+kubectl apply -f ingress.yaml
+kubectl get ingress -n monitoring
 ```
 ============================================================================================================
+# istio
+
